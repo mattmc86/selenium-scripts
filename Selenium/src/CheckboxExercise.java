@@ -13,19 +13,19 @@ public class CheckboxExercise {
 		System.setProperty("webdriver.chrome.driver", "/Users/matthewmckenna/Desktop/automation/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/"); 
 		driver.findElement(By.id("checkBoxOption1")).click();
-		// get number of checkboxes in page
+		//get number of checkboxes in page
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
-		// check the first checkbox and assert
+		//check the first checkbox and assert
 		driver.findElement(By.id("checkBoxOption1")).click();
 		Thread.sleep(1000);
 		Assert.assertTrue(driver.findElement(By.id("checkBoxOption1")).isSelected());
-		// uncheck the first checkbox and assert
+		//uncheck the first checkbox and assert
 		Thread.sleep(2000);
 		driver.findElement(By.id("checkBoxOption1")).click();
 		Assert.assertFalse(driver.findElement(By.id("checkBoxOption1")).isSelected());
-
+		
 	}
 
 }
